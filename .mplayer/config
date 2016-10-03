@@ -1,0 +1,75 @@
+# ## default configuration that applies to every file
+[default]
+
+really-quiet=1
+
+# Video settings
+vo=x11,sdl,fbdev2
+double="yes"
+hardframedrop="no"
+framedrop=0
+zoom="yes"
+fs="no"
+stop-xscreensaver=yes
+
+# Picture settings
+contrast=24
+brightness=12
+saturation=-14
+hue=-8
+
+# Audio settings
+ao=sdl
+mixer-channel="Master"
+channels = 2
+alang = jp,jap,en,eng
+softvol=1
+softvol-max=600
+
+# Subtitle settings
+unicode=yes
+ass=1
+utf8=yes
+slang=jp,jap,en,eng
+subpos="100"
+spualign="-1"
+spuaa=4
+subfont-text-scale = 3
+#nofontconfig = 1 #Breaks OpenBSD osd
+
+# Performance settings
+cache-min=99   # 0 for speed, 99 to improve playback
+cache-seek-min=99   # 0 for speed, 99 to improve playback
+cache=13276
+autoq=100
+lavdopts=trreads=5
+mc=1# keeps video and sound in sync
+dr=1 # direct rendering
+autosync=30
+
+#Misc Settings
+idx="yes"   #Allow seeking with unfinished downloads
+vf=ass,screenshot   #Screenshots with subtitles
+#vf=screenshot   #Screenshots without subtitles
+
+##Extreme performance, last resort, nvidea gpu, looks like shit settings
+hardframedrop="yes"
+vc=mpeg12,ffmpeg12,
+#vc=ffh264vdpau,ffmpeg12vdpau,ffwmv3vdpau,ffvc1vdpau,coreavc,dummy,
+#vf="scale=640:480"
+lavdopts=fast=1:threads=4:skiploopfilter=all:skipframe=nonref
+noslices="yes"
+nodouble="yes"
+nocorrect-pts = 1
+
+[protocol.dvd]
+#profile-desc="profile for dvd:// streams"
+af=volnorm=1 # increase amplitude for movies because of wide dynamic range
+#vf=yadif=3,hqdn3d=3:2.8:1:3 # for deinterlacint (tv shows)
+
+[protocol.dvdnav]
+profile-desc="profile for dvdnav:// streams"
+profile=protocol.dvd
+mouse-movements=yes
+nocache=yes
+

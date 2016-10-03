@@ -1,0 +1,11 @@
+*locale: true
+*metasendsEscape: true
+*savelines: 4096
+*vt100.geometry: 86x32
+*faceName: Terminus::antialias=false
+*faceNameDoublesize: Mincho Gothic
+*faceSize: 12
+*scrollBar: false
+*foreground: white
+*background: black
+XTerm*termName:         xterm-256color

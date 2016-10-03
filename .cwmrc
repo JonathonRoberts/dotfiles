@@ -1,0 +1,3 @@
+bind C-I xombrero
+#bind CM-Return "uxterm -fa terminus -fd 'Mincho Gothic' -fs 12"
+fontname Terminus
