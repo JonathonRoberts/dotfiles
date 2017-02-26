@@ -9,8 +9,17 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " Perl shebang, warnings, strict, and html tag
    autocmd BufNewFile *.pl 0put =\"#!/usr/bin/perl\<nl>print \\"Content-Type: text/html\\n\\n\\";\<nl>\<nl>use strict;\<nl>use warnings;\<nl>\<nl>\"|$
 
+" ASM Skeleton file
+au BufNewFile *.asm 0r ~/.vim/asm.skel | let IndentStyle = "asm"
+
+" C Skeleton file
+au BufNewFile *.c 0r ~/.vim/c.skel | let IndentStyle = "c"
+
 " HTML Skeleton file
 au BufNewFile *.html 0r ~/.vim/html.skel | let IndentStyle = "html"
+
+" MAKEFILE Skeleton file
+au BufNewFile Makefile 0r ~/.vim/makefile.skel
 
 "}}}
 
@@ -104,8 +113,7 @@ nnoremap : ;
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
-map <F9> ;make<enter><enter>
-map <F10> ;make && ./a.out<enter>
+map <F10> ;!cc %&&./a.out<enter>
 map <F11> ;!perl %<enter>
 
 "}}}

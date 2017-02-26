@@ -1,5 +1,5 @@
 ## Wallpaper
-feh --bg-fill ~/images/1366099668983.jpg
+feh --bg-fill ~/images/darkest.png
 sh ~/.fehbg &
 
 ## Uim
