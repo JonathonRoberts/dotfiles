@@ -9,3 +9,4 @@
 *foreground: white
 *background: black
 XTerm*termName:         xterm-256color
+XTerm*loginShell: true
