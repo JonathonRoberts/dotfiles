@@ -1,5 +1,6 @@
 ## Wallpaper
-feh --bg-fill ~/images/darkest.png
+#feh --bg-fill ~/images/Everest.png
+feh --bg-tile ~/images/Everest.png
 sh ~/.fehbg &
 
 ## Uim

@@ -18,6 +18,9 @@ au BufNewFile *.c 0r ~/.vim/c.skel | let IndentStyle = "c"
 " HTML Skeleton file
 au BufNewFile *.html 0r ~/.vim/html.skel | let IndentStyle = "html"
 
+" XML Skeleton file
+au BufNewFile *.xml 0r ~/.vim/xml.skel | let IndentStyle = "xml"
+
 " MAKEFILE Skeleton file
 au BufNewFile Makefile 0r ~/.vim/makefile.skel
 
@@ -41,11 +44,8 @@ syntax enable
 set grepprg=grep\ -nH\ $*
 
 " Tabs and indenting
-set expandtab " spaces instead of tabs
 set smarttab "affects how tab key works
 set autoindent
-set shiftwidth=3
-set softtabstop=3
 
 " Use English for spellchecking
 setlocal spell spelllang=en_gb
