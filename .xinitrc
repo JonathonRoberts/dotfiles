@@ -1,5 +1,6 @@
 ## Wallpaper
-feh --bg-fill ~/images/1366099668983.jpg
+#feh --bg-fill ~/images/Everest.png
+feh --bg-tile ~/images/Everest.png
 sh ~/.fehbg &
 
 ## Uim
@@ -16,10 +17,13 @@ uim-xim &
 xset +fp /usr/local/lib/X11/fonts/*
 xset fp rehash
 
-setxkbmap dvorak -option ctrl:swapcaps
+setxkbmap dvorak
+
+redshift&
 
 ## Cwm
 until cwm; do
   true
 done
 exec cwm
+
