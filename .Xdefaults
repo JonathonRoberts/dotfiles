@@ -2,9 +2,9 @@
 *metasendsEscape: true
 *savelines: 4096
 *vt100.geometry: 86x32
-*faceName: Terminus::antialias=false
-*faceNameDoublesize: Mincho Gothic
-*faceSize: 12
+*facename: Terminus::antialias=false
+*facenameDoublesize: Mincho Gothic
+*facesize: 10
 *scrollBar: false
 *foreground: white
 *background: black

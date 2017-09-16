@@ -1,3 +1,2 @@
-bind-key C-I xombrero
-#bind-key CM-Return "uxterm -fa terminus -fd 'Mincho Gothic' -fs 12"
+bind C-I firefox
 fontname Terminus
