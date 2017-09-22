@@ -6,8 +6,23 @@ autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
-" Add shebang for new files
-   autocmd BufNewFile *.pl 0put =\"#!/usr/bin/perl\<nl>\<nl>\"|$
+" Perl shebang, warnings, strict, and html tag
+   autocmd BufNewFile *.pl 0put =\"#!/usr/bin/perl\<nl>print \\"Content-Type: text/html\\n\\n\\";\<nl>\<nl>use strict;\<nl>use warnings;\<nl>\<nl>\"|$
+
+" ASM Skeleton file
+au BufNewFile *.asm 0r ~/.vim/asm.skel | let IndentStyle = "asm"
+
+" C Skeleton file
+au BufNewFile *.c 0r ~/.vim/c.skel | let IndentStyle = "c"
+
+" HTML Skeleton file
+au BufNewFile *.html 0r ~/.vim/html.skel | let IndentStyle = "html"
+
+" XML Skeleton file
+au BufNewFile *.xml 0r ~/.vim/xml.skel | let IndentStyle = "xml"
+
+" MAKEFILE Skeleton file
+au BufNewFile Makefile 0r ~/.vim/makefile.skel
 
 "}}}
 
@@ -29,11 +44,8 @@ syntax enable
 set grepprg=grep\ -nH\ $*
 
 " Tabs and indenting
-set expandtab " spaces instead of tabs
 set smarttab "affects how tab key works
 set autoindent
-set shiftwidth=3
-set softtabstop=3
 
 " Use English for spellchecking
 setlocal spell spelllang=en_gb
@@ -67,10 +79,6 @@ set nohidden
 " Cursor highlighting
 highlight MatchParen ctermbg=4
 
-" :W sudo saves the file
-" (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
-
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
@@ -78,10 +86,16 @@ set t_vb=
 set tm=500
 
 set background=dark "     So
-colorscheme peachpuff "Beautiful
+colorscheme desert "Beautiful
 
 "Show position
 set ruler
+
+" Secure from modeline exploits
+set modelines=0
+
+" Highlight column 73
+set colorcolumn=73
 
 " }}}
 
@@ -98,12 +112,15 @@ nnoremap <space> za
 nnoremap ; :
 nnoremap : ;
 
-map <F9> ;make<enter><enter>
-map <F10> ;make && ./a.out<enter>
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
+map <F10> ;!cc %&&./a.out<enter>
 map <F11> ;!perl %<enter>
 
 "}}}
-"
+
 "{{{ Common spelling errors
 iabbrev teh the
 iabbrev recieved received

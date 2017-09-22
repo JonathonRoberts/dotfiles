@@ -1,0 +1,9 @@
+http://rss.slashdot.org/Slashdot/slashdot||Tech|
+exec:wget -q -O - https://news.ycombinator.com/rss||Tech|
+http://feeds.reuters.com/Reuters/UKTopNews?format=xml||News|
+http://krebsonsecurity.com/feed/||Tech|
+http://undeadly.org/cgi?action=rss||Tech|
+http://www.muddywatersresearch.com/feed/?post_type=reports||Finance|
+http://feeds.feedburner.com/codinghorror/||Tech|
+http://feeds.feedburner.com/DrudgeReportFeed||News|
+exec:wget -q -O - https://jonrob.net/feed/||Tech|
